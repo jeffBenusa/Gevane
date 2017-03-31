@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+{{dump}}
+<html lang='en'>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ site.name }}</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{theme.link}}/style/style.css">
+    {{wp_head}}
+  </head>
+  <body>
+    <div class="layoutImg" id="topPage"></div>
+    <div class="layoutContainer">
+
+      <!-- NAV -->
+      <div class="layoutHeader">
+
+        {% include 'header.twig' %}
+
+      </div>
+      <!-- BODY -->
+
+      <div class="container layoutBody bs">
+
+
+          {% include 'mobileMenu.twig' %}
+
+          <div class="container single">
+            <div class="wrap">
+
+              {% block content %}
+              {% endblock %}
+
+              {% include 'footer.twig' %}
+
+            </div>
+          </div>
+
+      </div>
+
+    </div>
+  </div>
+  </body>
+  <script src="{{theme.link}}/js/jquery.js"></script>
+  <script src="{{theme.link}}/js/Event.js"></script>
+  <script src="{{theme.link}}/js/Magnifier.js"></script>
+  <script src="{{theme.link}}/js/vendor.js"></script>
+  <script src="{{theme.link}}/js/bundle.js"></script>
+
+
+
+</html>

@@ -1,0 +1,10 @@
+<?php /* Template Name: Default */ ?>
+
+<?php
+
+  $context = Timber::get_context();
+  $post = new TimberPost();
+  $context['post'] = $post;
+  Timber::render('default.twig', $context);
+
+?>

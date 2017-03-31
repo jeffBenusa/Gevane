@@ -1,0 +1,56 @@
+<div class="headerNav bs">
+	<div class="navBtns bs">
+		<div id="o-ProductMenuDesktop" class="navBtnWrap">
+			<button id="i-ProductMenuDesktop" class="btn navBtn bs">Products</button>
+			<div class="menuPopup">
+				<ul class="navList list bs">
+					{% for product in productsMenu.get_items %}
+					<li class="listItem bs">
+						<a id="i-{{product.title}}" href="{{product.get_link}}" class="btn navListBtn bs">{{product.title}}</a>
+						{% if product.get_children %}
+							<ul class="navDropDown list bs">
+								{% for child in product.get_children %}
+									<li class="listItem bs">
+										<a id="i-{{child.title}}" href="{{child.get_link}}" class="btn navListBtn bs">{{child.title}}</a>
+									</li>
+								{% endfor %}
+							</ul>
+						{% endif %}
+					</li>
+
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+		<div id="o-SupportMenuDesktop" class="navBtnWrap">
+			<button id="i-SupportMenuDesktop" class="btn navBtn bs">Support</button>
+			<div class="menuPopup">
+				<ul class="navList list">
+					{% for support in supportMenu.get_items %}
+					<li class="listItem bs">
+						<a id="i-{{support.title}}" href="{{support.get_link}}" class="btn navListBtn bs">{{support.title}}</a>
+						{% if support.get_children %}
+							<ul class="navDropDown list">
+								{% for child in support.get_children %}
+									<li class="listItem bs">
+										<a id="i-{{child.title}}" href="{{child.get_link}}" class="btn navListBtn bs">{{child.title}}</a>
+									</li>
+								{% endfor %}
+							</ul>
+						{% endif %}
+					</li>
+
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+		<div class="navBtnWrap">
+			<a href="/contact"><button  class="btn navBtn bs">Contact Us</button></a>
+		</div>
+		<button id="i-Search" class="btn menuBtn"><i class="fa fa-search"></i></button>
+		<button id="i-Menu" class="btn menuBtn"><i class="fa fa-bars"></i></button>
+	</div>
+	<div id="o-Search" class="headerSearch bs">
+		<div id="search"></div>
+	</div>
+</div>

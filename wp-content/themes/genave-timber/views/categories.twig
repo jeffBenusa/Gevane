@@ -1,0 +1,41 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+
+<div class="contentContainer">
+  <div id="o-BodyContent" class="bodyContent">
+
+    {% for item in products %}
+
+      <div class="contentItem bs">
+        <div class="itemImage">
+          <a href="{{item.permalink}}">
+            <img src="{{item.thumbnail.src('medium')}}"></img>
+          </a>
+        </div>
+        <div class="itemContent">
+          <a href="{{item.permalink}}">
+            <div class="header">
+              <h3 class="title">{{item.title}}</h3>
+              {% if item.get_field('price') %}
+              <h5 class="price"><small>Price: </small>{{item.get_field('price')}}</h5>
+              {% endif %}
+            </div>
+          </a>
+          <div class="itemCat">
+            {% for category in item.categories %}
+              <a href="{{category.link}}" class="link">{{category.name}}</a>
+              <p>-</p>
+            {% endfor %}
+          </div>
+          <div class="itemBody">
+            {{item.get_preview(29)}}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+
+  </div>
+</div>
+
+{% endblock %}

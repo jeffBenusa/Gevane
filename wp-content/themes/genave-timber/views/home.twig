@@ -1,0 +1,42 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+
+<!-- SLIDER -->
+<div class="bannerContainer">
+  <div class="bannerLeft">
+    <button id="slideLeft" class="btn"><h2><i class="fa fa-angle-left fa-3x"></i></h2></button>
+  </div>
+  <div class="bannerContent">
+
+
+    {% for slide in slides %}
+
+    <div id="o-{{slide.post_name}}" class="slide">
+      <div class="slideText bs">
+        <h1>{{slide.title}}</h1>
+        {{slide.content}}
+        <a href="{{slide.get_field('link')}}" class="btn">view {{slide.title}}</a>
+      </div>
+      <img class="slideImage" src="{{slide.thumbnail.src}}" />
+
+    </div>
+
+    {% endfor %}
+
+    <div class="tracker">
+      {% for item in slides %}
+      <button id="i-{{item.post_name}}" class="slideBtn btn"></button>
+      {% endfor %}
+
+    </div>
+  </div>
+  <div class="bannerRight">
+    <button id="slideRight" class="btn"><h2><i class="fa fa-angle-right fa-3x"></i></h2></button>
+  </div>
+</div>
+
+<!-- BODY -->
+
+
+{% endblock %}
