@@ -364,6 +364,13 @@ textarea {
   font: inherit;
   /* 2 */ }
 
+/* @function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+
+  @return $map;
+} */
 .container {
   max-width: 1320px;
   margin-left: auto;
@@ -374,13 +381,13 @@ textarea {
     display: block;
     clear: both; }
   .container.-padded {
-    margin-left: setting("gutter");
-    margin-right: setting("gutter"); }
-    @media (min-width: setting("large", (minWidth: em(320px), maxWidth: em(1320pxsetting "gutter" setting("gutter")), maxWidthWideGutter: em(1320pxsetting "gutterWide" setting("gutterWide")), medium: em(760px), large: em(1005px)))) {
+    margin-left: 20px;
+    margin-right: 20px; }
+    @media (min-width: em(1005px)) {
       .container.-padded {
-        margin-left: setting("gutterWide");
-        margin-right: setting("gutterWide"); } }
-    @media (min-width: setting("maxWidth", (minWidth: em(320px), maxWidth: em(1320pxsetting "gutter" setting("gutter")), maxWidthWideGutter: em(1320pxsetting "gutterWide" setting("gutterWide")), medium: em(760px), large: em(1005px)))) {
+        margin-left: 80px;
+        margin-right: 80px; } }
+    @media (min-width: em(1320pxsetting "gutter" 20px)) {
       .container.-padded {
         margin: auto; } }
   .container.-centered {
@@ -393,11 +400,11 @@ textarea {
   .container.-full-width {
     max-width: 100%;
     width: 100%; }
-    @media (min-width: setting("breakpoint.medium.max", (breakpoint: (xsmall: em(320px) em(599px), small: em(380px), medium: (max: em(799px), min: em(800px)), large: em(1000px), xlarge: em(1400px)), global: (header: (borderHeight: 33px, breakpoint: (small: em(380px), smallMax: em(799px), medium: em(800px), large: em(1000px)), height: (small: 50px, medium: 77px, large: 110px))), gutter: 20px, gutterWide: 80px, grid: (gutter: (full: 2px, half: 1px)), imageBackgroundColor: #ddd, transition: (method: linear, speed: 150ms), zIndex: (aboveAll: 100)))) {
+    @media (min-width: em(799px)) {
       .container.-full-width {
         max-width: 90%;
         width: 90%; } }
-  @media (break("maxWidthWideGutter"): max-width) {
+  @media (em(1320pxsetting "gutterWide" 80px): max-width) {
     .container.-wide-left-gutter {
       margin-left: 60px; } }
   .container.-white {
@@ -416,8 +423,3 @@ textarea {
       position: relative;
       top: 50%;
       transform: translateY(-50%); } }
-
-#o-sirens {
-  height: 200px;
-  background-color: blue;
-  width: 500px; }

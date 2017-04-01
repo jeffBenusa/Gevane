@@ -2,10 +2,6 @@
 
 /**
  * Template Name: Home Page
- *
- *
- *
- *
  */
 
 $context = Timber::get_context();

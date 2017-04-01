@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+{{dump}}
+<html lang='en'>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ site.name }}</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{{theme.link}}/assets/dist/style/style.css">
+    {{wp_head}}
+  </head>
+  <body>
+
+  {% include '_organisms/header.twig' %}
+
+  {#{% include 'mobileMenu.twig' %}#}
+
+
+  <div class="layoutImg" id="topPage"></div>
+    <div class="layoutContainer">
+
+      <!-- NAV -->
+      <div class="layoutHeader">
+
+
+
+      </div>
+      <!-- BODY -->
+
+      <div class="container layoutBody bs">
+
+          <div class="container single">
+            <div class="wrap">
+
+              {% block content %}
+              {% endblock %}
+
+              {% include 'footer.twig' %}
+
+            </div>
+          </div>
+
+      </div>
+
+    </div>
+  </div>
+
+    <script id="__bs_script__">//<![CDATA[
+      document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.8'><\/script>".replace("HOST", location.hostname));
+      //]]></script>
+
+  </body>
+
+  <script data-main="{{ theme.link }}assets/dist/scripts/main"
+          src="{{ theme.link }}assets/vendor/requirejs/require.js">
+  </script>
+
+
+
+
+  {#<script src="{{theme.link}}/js/jquery.js"></script>#}
+  {#<script src="{{theme.link}}/js/Event.js"></script>#}
+  {#<script src="{{theme.link}}/js/Magnifier.js"></script>#}
+  {#<script src="{{theme.link}}/js/vendor.js"></script>#}
+  {#<script src="{{theme.link}}/js/bundle.js"></script>#}
+
+
+
+</html>

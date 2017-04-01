@@ -16,31 +16,33 @@
     <script>console.log(window.productImages)</script>
 
     <div class="linksContainer bs">
-      <h5 class="title">Additional Resources</h5>
+      <h5 class="title">Resources</h5>
       <div class="linksWrap">
-        <a href="#" class="linkItem btn">
-          <img class="" src="{{theme.link}}/images/filetypes/pdf.png"></img>
-          <p>Product PDF</p>
-        </a>
-        <a href="#" class="linkItem btn">
-          <img class="" src="{{theme.link}}/images/filetypes/zip.png"></img>
-          <p>Product Zip</p>
-        </a>
-        <a href="#" class="linkItem btn">
-          <img class="" src="{{theme.link}}/images/filetypes/doc.png"></img>
-          <p>Product Doc</p>
-        </a>
-        <a href="#" class="linkItem btn">
-          <img class="" src="{{theme.link}}/images/filetypes/avi.png"></img>
-          <p>Product Video</p>
-        </a>
+
+        {% for i in 1..6 %}
+            {% set file = post.get_field('file_' ~ i)|split(';') %}
+            {% if file[0] == 'pdf' %}
+	            <a href="{{file[2]}}" target="_blank" class="linkItem btn">
+                  <img class="" src="{{theme.link}}/images/filetypes/pdf.png"></img>
+                  <p>{{file[1]}}</p>
+                </a>
+            {% elseif file[0] == 'video' %}
+            	<a href="{{file[2]}}" target="_blank" class="linkItem btn">
+                  <img class="" src="{{theme.link}}/images/filetypes/avi.png"></img>
+                  <p>>{{file[1]}}</p>
+                </a>
+            {% else %}
+
+            {% endif %}
+        {% endfor %}
+
       </div>
     </div>
 
   </div>
-  <div class="bodyContent withSide bs">
+  <div class="bodyContent single bs">
     <div class="productWrap">
-      <div id="content" class="productContent bs">
+      <div class="productContent bs">
         <div class="header">
           <h1 class="title">{{post.title}}</h1>
 
@@ -55,47 +57,49 @@
             <p>-</p>
           {% endfor %}
         </div>
+        <div id="content" class="productDesc">
+          {{post.content}}
+        </div>
         <div class="productBody">
           <div class="productMenu">
-            <a class="open" id="i-Overview" href="#content">Overview</a>
-            <a class="" id="i-Specs" href="#content">Specifications</a>
-            <a class="" id="i-Support" href="#content">Support</a>
+            <a class="bs open" id="i-Details" href="#content">Additional Details</a>
+            <a class="bs" id="i-Specs" href="#content">Specifications</a>
+            <a class="bs" id="i-Support" href="#content">Support</a>
           </div>
-          <div class="content open" id="o-Overview">
-            <h4 class="title">Overview</h4>
+          <div class="content open" id="o-Details">
             <div class="body bs">
-              {{post.content}}
+              {{post.get_field('details')}}
             </div>
           </div>
           <div class="content" id="o-Specs">
-            <h4 class="title">Specifications</h4>
             <div class="body bs">
               {{post.get_field('specs')}}
             </div>
           </div>
           <div class="content" id="o-Support">
-            <h4 class="title">Support</h4>
             <div class="body bs">
               {{post.get_field('support')}}
             </div>
           </div>
         </div>
-        <div class="productOptions">
-          <h4 class="title">Associated Products</h4>
-          <ul class="optionList">
-            {% for item in post.get_field('associated_products') %}
-              <a href="{{item.permalink}}">
-                <li class="bs">
-                  <div class="optionImg bs">
-                    <img src="{{item.thumbnail.src('thumbnail')}}" />
-                  </div>
-                  <h5>{{item.title}}</h5>
-                  <h6>{{ item.get_field('price') }}</h6>
-                </li>
-              </a>
-            {% endfor %}
-          </ul>
-        </div>
+        {% if post.get_field('associated_products') %}
+          <div class="productOptions">
+            <h4 class="title">Associated Products</h4>
+            <ul class="optionList">
+              {% for item in post.get_field('associated_products') %}
+                <a href="{{item.permalink}}">
+                  <li class="bs">
+                    <div class="optionImg bs">
+                      <img src="{{item.thumbnail.src('thumbnail')}}" />
+                    </div>
+                    <h5>{{item.title}}</h5>
+                    <h6>{{ item.get_field('price') }}</h6>
+                  </li>
+                </a>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
       </div>
     </div>
   </div>

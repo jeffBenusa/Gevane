@@ -11,7 +11,7 @@ var browserSync = require('browser-sync');
 
 
 //Paths
-var path = '../genave-timber/assets/';
+var path = '../genave/assets/';
 var src = path + 'src/';
 var dist = path + 'dist/';
 var vendor = path + 'vendor/';
