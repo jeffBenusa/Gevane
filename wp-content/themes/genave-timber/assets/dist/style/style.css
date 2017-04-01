@@ -363,3 +363,61 @@ textarea {
   /* 1 */
   font: inherit;
   /* 2 */ }
+
+.container {
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative; }
+  .container:after {
+    content: " ";
+    display: block;
+    clear: both; }
+  .container.-padded {
+    margin-left: setting("gutter");
+    margin-right: setting("gutter"); }
+    @media (min-width: setting("large", (minWidth: em(320px), maxWidth: em(1320pxsetting "gutter" setting("gutter")), maxWidthWideGutter: em(1320pxsetting "gutterWide" setting("gutterWide")), medium: em(760px), large: em(1005px)))) {
+      .container.-padded {
+        margin-left: setting("gutterWide");
+        margin-right: setting("gutterWide"); } }
+    @media (min-width: setting("maxWidth", (minWidth: em(320px), maxWidth: em(1320pxsetting "gutter" setting("gutter")), maxWidthWideGutter: em(1320pxsetting "gutterWide" setting("gutterWide")), medium: em(760px), large: em(1005px)))) {
+      .container.-padded {
+        margin: auto; } }
+  .container.-centered {
+    text-align: center; }
+  .container.-padded-vertical {
+    padding-bottom: 60px;
+    padding-top: 35px; }
+  .container.-margin-bottom {
+    margin-bottom: 2.5em; }
+  .container.-full-width {
+    max-width: 100%;
+    width: 100%; }
+    @media (min-width: setting("breakpoint.medium.max", (breakpoint: (xsmall: em(320px) em(599px), small: em(380px), medium: (max: em(799px), min: em(800px)), large: em(1000px), xlarge: em(1400px)), global: (header: (borderHeight: 33px, breakpoint: (small: em(380px), smallMax: em(799px), medium: em(800px), large: em(1000px)), height: (small: 50px, medium: 77px, large: 110px))), gutter: 20px, gutterWide: 80px, grid: (gutter: (full: 2px, half: 1px)), imageBackgroundColor: #ddd, transition: (method: linear, speed: 150ms), zIndex: (aboveAll: 100)))) {
+      .container.-full-width {
+        max-width: 90%;
+        width: 90%; } }
+  @media (break("maxWidthWideGutter"): max-width) {
+    .container.-wide-left-gutter {
+      margin-left: 60px; } }
+  .container.-white {
+    background-color: #fff; }
+  .container.-gray {
+    background-color: #f7f6f6; }
+  .container.-narrow {
+    max-width: 916px; }
+  .container.-listing {
+    max-width: 1200px; }
+  .container.-article {
+    max-width: 1500px;
+    width: 63%; }
+  @media (min-width: 600px) {
+    .feature .container {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%); } }
+
+#o-sirens {
+  height: 200px;
+  background-color: blue;
+  width: 500px; }

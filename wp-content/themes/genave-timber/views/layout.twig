@@ -8,8 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{{ site.name }}</title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{{theme.link}}/style/style.css">
+    <link rel="stylesheet" type="text/css" href="{{theme.link}}/assets/dist/style/style.css">
     {{wp_head}}
   </head>
   <body>
@@ -44,6 +43,11 @@
 
     </div>
   </div>
+
+    <script id="__bs_script__">//<![CDATA[
+      document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.8'><\/script>".replace("HOST", location.hostname));
+      //]]></script>
+
   </body>
 
   <script data-main="{{ theme.link }}assets/dist/scripts/main"

@@ -1,0 +1,78 @@
+.container {
+  @include container;
+  position: relative;
+  //z-index: 1;
+
+  // Variants
+
+  &.-padded {
+    margin-left: setting('gutter');
+    margin-right: setting('gutter');
+
+    @include breakpoint(setting('large', $containerBreakpoints)) {
+      margin-left: setting('gutterWide');
+      margin-right: setting('gutterWide');
+    }
+
+    @include breakpoint(setting('maxWidth', $containerBreakpoints)) {
+      margin: auto;
+    }
+  }
+
+  &.-centered {
+    text-align: center;
+  }
+
+  &.-padded-vertical {
+    padding-bottom: 60px;
+    padding-top: 35px;
+  }
+
+  &.-margin-bottom {
+    margin-bottom: 2.5em;
+  }
+
+  &.-full-width {
+    max-width: 100%;
+    width: 100%;
+    @include breakpoint(setting('breakpoint.medium.max', $settings)) {
+      max-width: 90%;
+      width: 90%;
+    }
+  }
+
+  &.-wide-left-gutter {
+    @include breakpoint('max-width' break('maxWidthWideGutter')) {
+      margin-left: 60px;
+    }
+  }
+
+  &.-white {
+    background-color: #fff;
+  }
+
+  &.-gray {
+    background-color: #f7f6f6;
+  }
+
+  &.-narrow {
+    max-width: 916px;
+  }
+
+  &.-listing {
+    max-width: 1200px;
+  }
+
+  &.-article {
+    max-width: 1500px;
+    width: 63%;
+  }
+
+  // Modifiers
+
+  .feature & {
+    @include breakpoint(600px) {
+      @include centered;
+    }
+  }
+}

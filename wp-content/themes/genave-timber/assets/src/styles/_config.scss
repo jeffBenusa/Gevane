@@ -1,0 +1,308 @@
+/// ----------------------------------------------------------------------------
+/// Breakpoint Settings
+///
+/// If you're using [Breakpoint](https://github.com/at-import/breakpoint), you
+/// can define its settings here.
+/// ----------------------------------------------------------------------------
+// $breakpoint-no-queries: false; // true to replace `@media` with `.no-mq` styles
+// $breakpoint-no-query-fallbacks: false; // true to add `.no-mq` styles
+// $no-query: 'no-query' '.no-mq';
+
+/// ----------------------------------------------------------------------------
+/// Layouts
+///
+/// Susy can be used to create multiple grid layouts. The `$default-layout`
+/// layout is mapped to the `$susy` variable, which is the required namespace
+/// within Susy. View
+/// [Susy's documentation](http://susydocs.oddbird.net/en/latest/) to learn how
+/// to call other layouts and for accepted key/value pairs.
+///
+/// If you have no use for grids or Susy, you may ignore these settings.
+/// ----------------------------------------------------------------------------
+$default-layout: (
+  columns: 12,
+  container: 1320px,
+  gutters: 0
+);
+
+$landing-layout: (
+  columns: 12,
+  container: 1500px,
+  gutters: 19px
+);
+
+$events-layout: (
+  columns: 11,
+  container: 1500px,
+  gutters: 0
+);
+
+$susy: $default-layout;
+
+/// ----------------------------------------------------------------------------
+/// Settings
+///
+/// The settings map allows you to conveniently define all of your variables in
+/// a single map.
+///
+/// You may have a map like so:
+/// ```
+/// $settings: (
+///   border: 1px solid black,
+///   z-index: (
+///     nav: 2,
+///     default: 1
+///   )
+/// );
+/// ```
+///
+/// And then you would simply use the `setting` function to call your defined
+/// settings, like so:
+/// ```
+/// .foo {
+///   border-top: setting(border);
+///   z-index: setting(z-index, default);
+/// }
+/// ```
+/// ----------------------------------------------------------------------------
+$settings: (
+  breakpoint: (
+    xsmall: em(320px) em(599px),
+    small: em(380px),
+    medium: (
+      max: em(800px - 1px),
+      min: em(800px)
+    ),
+    large: em(1000px),
+    xlarge: em(1400px)
+  ),
+  global: (
+    header: (
+      borderHeight: 33px,
+      breakpoint: (
+        small: em(380px),
+        smallMax: em(800px - 1px),
+        medium: em(800px),
+        large: em(1000px)
+      ),
+      height: (
+        small: 50px,
+        medium: 77px,
+        large: 110px
+      )
+    )
+  ),
+  gutter: 20px,
+  gutterWide: 80px,
+  grid: (
+    gutter: (
+      full: 2px,
+      half: 1px
+    )
+  ),
+  imageBackgroundColor: #ddd,
+  transition: (
+    method: linear,
+    speed: 150ms
+  ),
+  zIndex: (
+    aboveAll: 100
+  )
+) !global;
+/// ----------------------------------------------------------------------------
+/// Breakpoints
+///
+/// Defines commonly used breakpoints for media queries. Breakpoint values
+/// should use `em`, which is calculated using 16px as the base. Content should
+/// dictate your breakpoints, not screen widths of popular devices.
+///
+/// Here's an example of how a `$breakpoints` map could look:
+///
+/// ```
+/// $breakpoints: (
+///   foo: em(837px),
+///   components: (
+///     navigation: em(900px),
+///     sidebar: em(1044px)
+///   ),
+///   screen: (
+///     xl-min: em(1200px),
+///     lg-max: em(1200px - 1px),
+///     lg-min: em(800px),
+///     md-max: em(800px - 1px)
+///   )
+/// );
+/// ```
+///
+/// If you're using [Breakpoint](https://github.com/at-import/breakpoint), you
+/// may wish to add a no-query fallback to your breakpoints, like so:
+///
+/// `lg-min: (em(870px), $no-query)`.
+///
+/// More information about Breakpoint's no-query fallbacks can be read
+/// [here](https://github.com/at-import/breakpoint/wiki/No-Query-Fallbacks).
+/// ----------------------------------------------------------------------------
+$containerBreakpoints: (
+  minWidth: em(320px),
+  maxWidth: em(susy-get(container) + setting('gutter') + setting('gutter')),
+  maxWidthWideGutter: em(susy-get(container) + setting('gutterWide') + setting('gutterWide')),
+  medium: em(760px),
+  large: em(1005px)
+) !global;
+
+/// ----------------------------------------------------------------------------
+/// Colors
+///
+/// Colors can be adjusted by using Sass's native color functions, such as
+/// `lighten`, `darken` and `mix`. As a guideline, adjust colors for specific
+/// circumstances where the color may only be used once, such as hover states
+/// or slight variations in font color.
+///
+/// Colors can be configured like so:
+///
+/// ```
+/// $colors: (
+///   gray: (
+///     light: #999,
+///     base: #666,
+///     dark: #333
+///   )
+/// );
+/// ```
+///
+/// and called like so:
+///
+/// ```
+/// .foo {
+///   background-color: color(gray, dark);
+///   color: color(gray);
+/// }
+/// ```
+/// ----------------------------------------------------------------------------
+$colors: (
+  blue: (
+    xlight: #62b9ed,
+    light: #0178c2,
+    base: #00609c,
+    dark: #054872
+  ),
+  navy: (
+    light: #25313e,
+    base: #192027,
+    dark: #192027,
+    xdark: #01101a
+  ),
+  teal: (
+    light: #0178c2,
+    base: #00609c,
+    dark: #054872
+  ),
+  black: (
+    light: #1b1b1b
+  ),
+  gray: (
+    light: #ebebeb,
+    base: #363636,
+    dark: #252525
+  ),
+  white: (
+    base: #f1f1f3
+  )
+) !global;
+
+$palettes: $colors; // deprecated
+
+/// ----------------------------------------------------------------------------
+/// Font Families
+///
+/// Define custom font variables here. `$helvetica` and `$monospace` have been
+/// defined to start, but you may re-configure as needed.
+/// ----------------------------------------------------------------------------
+$helvetica:
+  'Helvetica Neue',
+  'Helvetica',
+  'Roboto',
+  'Arial',
+  sans-serif !global;
+
+$monospace:
+  'Source Code Pro',
+  'Menlo',
+  'Monaco',
+  'Consolas',
+  'Courier New',
+  monospace !global;
+
+$gibson:
+  'canada-type-gibson',
+  $helvetica !global;
+
+$proxima: 'proxima-nova',
+  $helvetica !global;
+
+
+
+///
+/// -----------------------------
+/// TYPI CONFIG
+///
+/// -----------------------------
+///
+
+$breakpoints: (
+  xsmall: em(320px),
+  small: em(401px),
+  medium: em(800px),
+  large: em(1000px),
+  xlarge: em(1400px)
+);
+
+$typi: (
+  null: (16px, 1.3),
+  small: (18px, 1.5),
+  large: (16px, 1.3)
+);
+
+$h1-font-map: (
+  null: (40px, 1.1),
+  small: (40px, 1.2),
+  large: (50px, 1.3)
+);
+
+$h2-font-map: (
+  null: (30px, 1.2),
+  small: (40px, 1.2)
+);
+
+$h2-5-font-map: (
+  null: (22px, 1.2),
+  small: (32px, 1.2)
+);
+
+$h3-font-map: (
+  null: (20px, 1.2),
+  small: (30px, 1.2)
+);
+
+$h3-5-font-map: (
+  null: (24px, 1.2),
+);
+
+$h4-font-map: (
+  null: (16px, 1.2),
+  small: (20px, 1.2)
+);
+
+$h5-font-map: (
+  null: (16px, 1.5),
+  //small: (3em, 1.3)
+);
+
+$h6-font-map: (
+  null: (16px, 1.5),
+  //small: (3em, 1.3)
+);
+
+$p-font-map: (
+  null: (em(14px, 16px), 1.25)
+);
