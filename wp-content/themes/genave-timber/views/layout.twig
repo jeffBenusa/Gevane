@@ -45,11 +45,19 @@
     </div>
   </div>
   </body>
-  <script src="{{theme.link}}/js/jquery.js"></script>
-  <script src="{{theme.link}}/js/Event.js"></script>
-  <script src="{{theme.link}}/js/Magnifier.js"></script>
-  <script src="{{theme.link}}/js/vendor.js"></script>
-  <script src="{{theme.link}}/js/bundle.js"></script>
+
+  <script data-main="{{ theme.link }}assets/dist/scripts/main"
+          src="{{ theme.link }}assets/vendor/requirejs/require.js">
+  </script>
+
+
+
+
+  {#<script src="{{theme.link}}/js/jquery.js"></script>#}
+  {#<script src="{{theme.link}}/js/Event.js"></script>#}
+  {#<script src="{{theme.link}}/js/Magnifier.js"></script>#}
+  {#<script src="{{theme.link}}/js/vendor.js"></script>#}
+  {#<script src="{{theme.link}}/js/bundle.js"></script>#}
 
 
 

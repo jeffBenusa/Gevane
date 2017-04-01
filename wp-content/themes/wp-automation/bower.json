@@ -1,0 +1,17 @@
+{
+  "name": "genave",
+  "version": "1.0.0",
+  "author": "Benusa",
+  "dependencies": {
+    "breakpoint-sass": "~2.5.0",
+    "jquery": "~1.11.2",
+    "requirejs": "~2.1.17",
+    "susy": "~2.2.2",
+    "lodash": "~3.8.0",
+    "swiper": "~3.0.7",
+    "is_js": "~0.7.4"
+  },
+  "devDependencies": {
+    "breakpoint-sass": "~2.5.0"
+  }
+}

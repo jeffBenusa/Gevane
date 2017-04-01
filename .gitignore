@@ -1,1 +1,7 @@
 /.idea/*
+
+
+/wp-content/themes/wp-automation/node_modules/*
+/wp-content/themes/genave-timber/assets/vendor/*
+
+git rm --cached wp-content/themes/wp-automation/node_modules/*
