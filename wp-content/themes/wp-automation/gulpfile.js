@@ -3,6 +3,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
 var cssmin = require('gulp-cssmin');
 var del = require('del');
+var imagemin = require('gulp-imagemin');
 var jshint = require('gulp-jshint');
 var jshintStylish = require('jshint-stylish');
 var sass = require('gulp-sass');
@@ -41,7 +42,7 @@ gulp.task('scripts', function()
 
 gulp.task('img', function() {
 
-  gulp.src('img/src/*.{png,jpg,gif}')
+  gulp.src(src + 'images/**/*.{png,jpg,gif}')
 
     .pipe(imagemin({
 
@@ -55,7 +56,7 @@ gulp.task('img', function() {
 
 });
 
-gulp.task('default', ['sass', 'scripts'], function()
+gulp.task('default', ['sass', 'scripts','img'], function()
 {
   browserSync({
     notify: false

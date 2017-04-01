@@ -1,5 +1,4 @@
 <?php
-require_once (DUPLICATOR_PLUGIN_PATH . 'classes/package.php');
 
 global $wpdb;
 
@@ -15,12 +14,12 @@ if (isset($_POST['action']))
     }
 }
 
-DUP_Util::InitSnapshotDirectory();
+DUP_Util::initSnapshotDirectory();
 
-$Package = DUP_Package::GetActive();
+$Package = DUP_Package::getActive();
 $dup_tests = array();
-$dup_tests = DUP_Server::GetRequirements();
-$default_name = DUP_Package::GetDefaultName();
+$dup_tests = DUP_Server::getRequirements();
+$default_name = DUP_Package::getDefaultName();
 
 //View State
 $ctrl_ui = new DUP_CTRL_UI();
@@ -30,8 +29,8 @@ $data = $ctrl_ui->GetViewStateList();
 $ui_css_storage = (isset($data->Payload['dup-pack-storage-panel']) && $data->Payload['dup-pack-storage-panel']) ? 'display:block' : 'display:none';
 $ui_css_archive = (isset($data->Payload['dup-pack-archive-panel']) && $data->Payload['dup-pack-archive-panel']) ? 'display:block' : 'display:none';
 $ui_css_installer = (isset($data->Payload['dup-pack-installer-panel']) && $data->Payload['dup-pack-installer-panel']) ? 'display:block' : 'display:none';
-$dup_intaller_files = implode(", ", array_keys(DUP_Server::GetInstallerFiles()));
-$dbbuild_mode = (DUP_Settings::Get('package_mysqldump') && DUP_Database::GetMySqlDumpPath()) ? 'mysqldump' : 'PHP';
+$dup_intaller_files = implode(", ", array_keys(DUP_Server::getInstallerFiles()));
+$dbbuild_mode = (DUP_Settings::Get('package_mysqldump') && DUP_DB::getMySqlDumpPath()) ? 'mysqldump' : 'PHP';
 
 ?>
 
@@ -165,7 +164,7 @@ SYSTEM REQUIREMENTS -->
             <div class="dup-sys-info dup-info-box">
                 <table class="dup-sys-info-results">
                     <tr>
-                        <td><?php printf("%s [%s]", __("MySQL Version", 'duplicator'), $wpdb->db_version()); ?></td>
+                        <td><?php printf("%s [%s]", __("MySQL Version", 'duplicator'), DUP_DB::getVersion()); ?></td>
                         <td><?php echo $dup_tests['SRV']['MYSQL_VER'] ?></td>
                     </tr>
                     <tr>
@@ -175,7 +174,7 @@ SYSTEM REQUIREMENTS -->
                 </table>
                 <small>
                     <?php
-                    _e("MySQL version 5.0+ or better is required and the PHP MySQLi extension (note the trailing 'i') is also required.  Contact your server administrator and request that mysqli extension and MySQL Server 5.0+ be installed. Please note in future versions support for other databases and extensions will be added.", 'duplicator');
+                    _e("MySQL version 5.0+ or better is required and the PHP MySQLi extension (note the trailing 'i') is also required.  Contact your server administrator and request that mysqli extension and MySQL Server 5.0+ be installed.", 'duplicator');
                     echo "&nbsp;<i><a href='http://php.net/manual/en/mysqli.installation.php' target='_blank'>[" . __('more info', 'duplicator') . "]</a></i>";
                     ?>										
                 </small>
@@ -197,8 +196,9 @@ SYSTEM REQUIREMENTS -->
                         $duplicator_nonce = wp_create_nonce('duplicator_cleanup_page');
                     ?> 
                     <form method="post" action="admin.php?page=duplicator-tools&tab=cleanup&action=installer&_wpnonce=<?php echo $duplicator_nonce; ?>">
-                    <?php _e("A reserved file(s) was found in the WordPress root directory. Reserved file names are [{$dup_intaller_files}].  To archive your data correctly please remove any of these files from your WordPress root directory.  Then try creating your package again.", 'duplicator'); ?>
-                        <br/><input type='submit' class='button action' value='<?php _e('Remove Files Now', 'duplicator') ?>' style='font-size:10px; margin-top:5px;' />
+						<b><?php _e('WordPress Root Path:', 'duplicator'); ?></b>  <?php echo DUPLICATOR_WPROOTPATH; ?><br/>
+						<?php _e("A reserved file(s) was found in the WordPress root directory. Reserved file names include [{$dup_intaller_files}].  To archive your data correctly please remove any of these files from your WordPress root directory.  Then try creating your package again.", 'duplicator'); ?>
+                        <br/><input type='submit' class='button button-small' value='<?php _e('Remove Files Now', 'duplicator') ?>' style='font-size:10px; margin-top:5px;' />
                     </form>
 				<?php endif; ?>
             </div>
@@ -221,7 +221,7 @@ FORM PACKAGE OPTIONS -->
 	<?php include('new1.inc.form.php'); ?>
 </div>
 
-<script type="text/javascript">
+<script>
 jQuery(document).ready(function ($) 
 {
 	//Init: Toogle for system requirment detial links

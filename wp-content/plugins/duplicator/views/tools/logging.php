@@ -6,7 +6,7 @@ $logs = glob(DUPLICATOR_SSDIR_PATH . '/*.log') ;
 if ($logs != false && count($logs)) 
 {
 	usort($logs, create_function('$a,$b', 'return filemtime($b) - filemtime($a);'));
-	@chmod(DUP_Util::SafePath($logs[0]), 0644);
+	@chmod(DUP_Util::safePath($logs[0]), 0644);
 } 
 
 $logname	 = (isset($_GET['logname'])) ? trim(sanitize_text_field($_GET['logname'])) : "";
@@ -50,7 +50,7 @@ $logfound = (strlen($logname) > 0) ? true :false;
 	label#dup-auto-refresh-lbl {display: inline-block;}
 </style>
 
-<script type="text/javascript">
+<script>
 jQuery(document).ready(function($) 
 {
 	Duplicator.Tools.FullLog = function() {

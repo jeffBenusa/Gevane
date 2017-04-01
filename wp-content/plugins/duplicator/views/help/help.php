@@ -1,5 +1,5 @@
 <?php
-DUP_Util::CheckPermissions('read');
+DUP_Util::hasCapability('read');
 
 require_once(DUPLICATOR_PLUGIN_PATH . '/assets/js/javascript.php');
 require_once(DUPLICATOR_PLUGIN_PATH . '/views/inc.header.php');
@@ -114,7 +114,7 @@ require_once(DUPLICATOR_PLUGIN_PATH . '/views/inc.header.php');
     </div>
 </div><br/><br/><br/><br/>
 
-<script type="text/javascript">
+<script>
     jQuery(document).ready(function($) {
 
         Duplicator.OpenSupportWindow = function() {
