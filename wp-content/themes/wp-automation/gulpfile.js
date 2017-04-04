@@ -1,4 +1,7 @@
+'use strict';
+
 var gulp = require('gulp');
+
 var autoprefixer = require('gulp-autoprefixer');
 var babel = require('gulp-babel');
 var concat = require('gulp-concat');
@@ -26,7 +29,7 @@ gulp.task('sass', function () {
 
   gulp.src(src + 'styles/style.scss')
 
-    .pipe(sass())
+    .pipe(sass().on('error', sass.logError))
 
     .pipe(gulp.dest(dist + 'style/'));
 

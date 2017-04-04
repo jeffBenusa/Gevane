@@ -1,0 +1,35 @@
+{% extends '_layouts/main.twig' %}
+
+{% block content %}
+<section id="atoms" class="section-wrapper -white">
+    <div class="container">
+        <div class="sg__item">
+            <h2 class="sg__heading">Global: Colors</h2>
+
+        </div>
+
+        <div class="sg__item">
+            <h2 class="sg__heading">Global: Fonts</h2>
+            
+        </div>
+
+        {#<div class="sg__item">#}
+        {#<h2 class="sg__heading">Text: Headings</h2>#}
+        {#{% for size in 1..6 %}#}
+        {#{% include '_partials/atoms/heading' with { params: {#}
+        {#size: size,#}
+        {#text: headline#}
+        {#}} %}#}
+        {#{% endfor %}#}
+        {#</div>#}
+
+        {#<div class="sg__item">#}
+        {#<h2 class="sg__heading">Text: Paragraph</h2>#}
+        {#{% include '_partials/atoms/paragraph' with { params: {#}
+        {#text: paragraph#}
+        {#}} %}#}
+        {#</div>#}
+    </div>
+</section>
+
+{% endblock %}

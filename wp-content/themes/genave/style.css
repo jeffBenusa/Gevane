@@ -1,5 +1,5 @@
 /*
-Theme Name: Genave - Timber
+Theme Name: Genave
 Theme URI:
 Author: Bodhi Digital, LLC
 Author URI: https://bodhi.digital
@@ -9,3 +9,5 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 */
+
+@import "assets/dist/style/style.css";

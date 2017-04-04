@@ -210,9 +210,9 @@
 /// @param  {String} $base [16px] - Base pixel value
 /// @return {String}              - em value
 /// ----------------------------------------------------------------------------
-//@function em($pixel, $base: 16px) {
-//  @return ($pixel / $base) * 1em;
-//}
+@function em($pixel, $base: 16px) {
+  @return ($pixel / $base) * 1em;
+}
 
 /// ----------------------------------------------------------------------------
 /// Slightly lighten a color (http://cl.ly/1K0T3f3l0N2G)
