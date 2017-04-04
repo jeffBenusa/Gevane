@@ -180,23 +180,6 @@ $containerBreakpoints: (
 /// ```
 /// ----------------------------------------------------------------------------
 $colors: (
-  blue: (
-    xlight: #62b9ed,
-    light: #0178c2,
-    base: #00609c,
-    dark: #054872
-  ),
-  navy: (
-    light: #25313e,
-    base: #192027,
-    dark: #192027,
-    xdark: #01101a
-  ),
-  teal: (
-    light: #0178c2,
-    base: #00609c,
-    dark: #054872
-  ),
   black: (
     light: #1b1b1b
   ),
@@ -207,6 +190,12 @@ $colors: (
   ),
   white: (
     base: #f1f1f3
+  ),
+  blue: (
+    light:lighten(#0782E3,20%),
+    base:#0782E3,
+    dark:darken(#0782E3,20%),
+    xdark:#192534
   )
 ) !global;
 
@@ -240,6 +229,9 @@ $gibson:
 $proxima: 'proxima-nova',
   $helvetica !global;
 
+$SourceSansPro: 'Source Sans Pro',  sans-serif !global;
+$Rubik: 'Rubik',  sans-serif !global;
+$Roboto: 'Roboto Mono',  monospace !global;
 
 
 ///

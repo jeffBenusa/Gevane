@@ -1,0 +1,63 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: color(gray, dark);
+  font-family: $so;
+  font-weight: 600;
+  margin: 0;
+  text-rendering: optimizeLegibility; // Fix the character spacing for headings
+}
+
+h1 {
+  font-family: $rubik;
+  font-size: 40px;
+  letter-spacing: 1.5px;
+  line-height: 54px;
+
+  &.-white{
+    color: #fff;
+  }
+
+  &.-blue{
+    color: #0782E3;
+  }
+
+  &.-dark-blue{
+    color: #192534;
+  }
+}
+
+h2 {
+  font-family: $rubik;
+  font-size: 40px;
+  font-weight: bold;
+  color: #192534;
+  letter-spacing: 1.5px;
+  line-height: 54px;
+}
+
+h3 {
+  @include typi($h3-font-map);
+}
+
+h4 {
+  @include typi($h4-font-map);
+}
+
+h5 {
+  @include typi($h5-font-map);
+}
+
+h6 {
+  @include typi($h6-font-map);
+}
+
+.-spaced {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 20px;
+}

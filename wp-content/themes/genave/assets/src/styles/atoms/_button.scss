@@ -1,0 +1,67 @@
+
+// Definitions
+.button,
+a.button,
+p > a.button {
+  background: #0782E3;
+  border: 0;
+  border-radius: 5px;
+  display: inline-block;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $SourceSansPro;
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 1px;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transition: all .3s;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+
+
+  // States
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: color(blue, dark);
+  }
+
+  &:active,
+  &:active:focus {
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: 1px dotted rgba(#000, .4);
+    text-decoration: underline;
+  }
+
+  &[disabled],
+  &.is-disabled {
+    box-shadow: none;
+    cursor: not-allowed;
+    opacity: .65;
+    pointer-events: none;
+  }
+
+  &:before {
+    content: none;
+  }
+
+
+  // modifications
+
+  &.-transparent {
+    background-color: transparent;
+    border: 1px solid color(blue,base);
+    color: color(blue,base);
+  }
+}

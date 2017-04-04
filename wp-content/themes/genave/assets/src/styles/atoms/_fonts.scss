@@ -1,0 +1,187 @@
+$px-base-font-size: 16px;
+$px-base-paragraph-margin: 25px;
+
+$base-font-size: em($px-base-font-size);
+$base-line-height: ($px-base-font-size * 1.5);
+$base-paragraph-margin: em($px-base-paragraph-margin, $px-base-font-size);
+
+p {
+  font-family: $SourceSansPro;
+  margin: $base-paragraph-margin 0;
+  color: #758591;
+  letter-spacing: 0.5px;
+  line-height: 24px;
+
+  &.rubik {
+    font-family: $Rubik;
+  }
+  &.roboto {
+    font-family: $Roboto;
+  }
+}
+
+.font-secondary {
+  font-family: $gibson;
+}
+
+ul,
+ol {
+  margin: $base-paragraph-margin 0;
+  padding-left: $base-paragraph-margin;
+}
+
+dl {
+  margin: $base-paragraph-margin 0;
+
+  dt {
+    font-weight: bold;
+    margin-top: .5em;
+  }
+
+  dd {
+    margin: 0;
+  }
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid gray;
+  display: block;
+  height: 1px;
+  margin: 2.25em 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+blockquote {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: (40 / 28);
+}
+
+cite,
+blockquote footer {
+  color: color(gray, light);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: $monospace;
+}
+
+samp {
+  font-size: 90%;
+}
+
+abbr {
+  cursor: help;
+}
+
+table {
+  margin: $base-paragraph-margin 0;
+}
+
+tr,
+td,
+th {
+  vertical-align: middle;
+}
+
+th {
+  padding: $base-paragraph-margin;
+  text-align: left;
+}
+
+td {
+  padding: $base-paragraph-margin;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+//legend {}
+//
+//label {}
+
+textarea {
+  resize: vertical;
+}
+
+select {
+  max-width: 100%;
+  width: auto;
+}
+
+[type='search'] {
+  appearance: none;
+}
+
+[type='radio'],
+[type='checkbox'] {
+  line-height: normal;
+  margin: 4px 0 0;
+  margin-top: 1px \9;
+}
+
+[type='file'],
+[type='range'] {
+  display: block;
+  width: 100%;
+}
+
+[multiple],
+[size] {
+  height: auto;
+}
+
+button,
+[type='submit'],
+[type='image']{
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+address {
+  font-style: normal;
+}
+
+main {
+  @include transition(opacity);
+
+  background-color: #fff; // #fff
+  outline: 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+strong {
+  font-weight: 700 !important;
+}

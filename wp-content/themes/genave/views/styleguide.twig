@@ -6,29 +6,107 @@
         <div class="sg__item">
             <h2 class="sg__heading">Global: Colors</h2>
 
+            <div class="sg__color">
+                <span class="sg__color__swatch -color--black--light"></span>
+                <span class="sg__color__label">black.light</span>
+            </div>
+            <div class="sg__color">
+                <span class="sg__color__swatch -color--gray--light"></span>
+                <span class="sg__color__label">gray.light</span>
+            </div>
+            <div class="sg__color">
+                <span class="sg__color__swatch -color--gray--base"></span>
+                <span class="sg__color__label">gray.base</span>
+            </div><div class="sg__color">
+                <span class="sg__color__swatch -color--gray--dark"></span>
+                <span class="sg__color__label">gray.dark</span>
+            </div>
+            <div class="sg__color">
+                <span class="sg__color__swatch -color--white--base"></span>
+                <span class="sg__color__label">white.base</span>
+            </div>
+            <div class="sg__color">
+                <span class="sg__color__swatch -color--blue--light"></span>
+                <span class="sg__color__label">blue.light</span>
+            </div>
+            <div class="sg__color">
+                <span class="sg__color__swatch -color--blue--base"></span>
+                <span class="sg__color__label">blue.base</span>
+            </div>
+            <div class="sg__color">
+                <span class="sg__color__swatch -color--blue--dark"></span>
+                <span class="sg__color__label">blue.dark</span>
+            </div>
+            <div class="sg__color">
+                <span class="sg__color__swatch -color--blue--xdark"></span>
+                <span class="sg__color__label">blue.xdark</span>
+            </div>
+
         </div>
 
         <div class="sg__item">
             <h2 class="sg__heading">Global: Fonts</h2>
-            
+            <p>
+                Default: SourceSansPro, sans-serif
+            </p>
+            <p>
+                <strong>Default Bold: SourceSansPro, sans-serif</strong>
+            </p>
+            <p>
+                <em>Default Italic: SourceSansPro, sans-serif</em>
+            </p>
+
+            <p class="rubik">
+                Rubik: Rubik, serif
+            </p>
+
+            <p class="rubik">
+                <strong>Rubik Bold: Rubik, serif</strong>
+            </p>
+
+            <p class="rubik">
+                <em>Rubik Italic: Rubik, serif</em>
+            </p>
+
+            <p class="roboto">
+                Roboto: Roboto, monospace
+            </p>
+
+            <p class="roboto">
+                <strong>Roboto Bold: Roboto, monospace</strong>
+            </p>
+
+            <p class="roboto">
+                <em>Roboto Italic: Roboto, monospace</em>
+            </p>
+
         </div>
 
-        {#<div class="sg__item">#}
-        {#<h2 class="sg__heading">Text: Headings</h2>#}
-        {#{% for size in 1..6 %}#}
-        {#{% include '_partials/atoms/heading' with { params: {#}
-        {#size: size,#}
-        {#text: headline#}
-        {#}} %}#}
-        {#{% endfor %}#}
-        {#</div>#}
+        <div class="sg__item">
+        <h2 class="sg__heading">Text: Headings</h2>
+        {% for size in 1..6 %}
+            <h{{ size }}>Lorum Ipsum Hipster Text</h{{ size }}>
+        {% endfor %}
+        </div>
 
-        {#<div class="sg__item">#}
-        {#<h2 class="sg__heading">Text: Paragraph</h2>#}
-        {#{% include '_partials/atoms/paragraph' with { params: {#}
-        {#text: paragraph#}
-        {#}} %}#}
-        {#</div>#}
+        <div class="sg__item">
+        <h2 class="sg__heading">Text: Paragraph</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit, erat feugiat dapibus porttitor, felis sapien maximus dui, et bibendum ipsum erat sed lectus. Nullam quam massa, tempus ut nulla vel, sollicitudin mollis metus. Sed elementum semper enim, eget interdum justo vulputate sit amet. Donec pulvinar eleifend ante, id commodo eros imperdiet vulputate. Nullam fringilla, nulla sed hendrerit fringilla, velit leo pellentesque dolor, id interdum nulla tellus nec ipsum. Aenean ex quam, aliquam id pulvinar iaculis, efficitur at tortor. Integer arcu arcu, mollis sit amet tempor ut, ultrices id enim.
+        </p>
+        </div>
+
+        <div class="sg__item">
+            <h2 class="sg__heading">Button</h2>
+            <div class="button">
+                Call To Action
+            </div>
+            <div class="button -transparent">
+                Call To Action - transparent
+            </div>
+        </div>
+
+
     </div>
 </section>
 

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="37px" height="24px" viewBox="0 0 37 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>mail icn</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="37" height="24" rx="3.36"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="37" height="24" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="37" height="24" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <path d="M18.9680842,15.1470155 C8.64313299,15.1470155 -1.68181818,-4.28571429 -1.68181818,-4.28571429 L39.6179865,-4.28571429 C39.6179865,-4.28571429 29.2930353,15.1470155 18.9680842,15.1470155 Z" id="path-5"></path>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="41.2998047" height="19.4327298" fill="white">
+            <use xlink:href="#path-5"></use>
+        </mask>
+    </defs>
+    <g id="website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="index" transform="translate(-635.000000, -1724.000000)">
+            <g id="contact" transform="translate(0.000000, 1489.000000)">
+                <g id="content" transform="translate(426.000000, 114.000000)">
+                    <g id="btn" transform="translate(189.000000, 109.000000)">
+                        <g id="mail-icn" transform="translate(20.000000, 12.000000)">
+                            <mask id="mask-3" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g id="Rectangle-2" stroke="#0782E3" mask="url(#mask-2)" stroke-width="4">
+                                <use mask="url(#mask-4)" xlink:href="#path-1"></use>
+                            </g>
+                            <g id="Triangle" mask="url(#mask-3)" stroke-width="4" stroke="#0782E3">
+                                <use mask="url(#mask-6)" xlink:href="#path-5"></use>
+                            </g>
+                            <path d="M1.47159091,22.9285714 L11.9913603,12.2057177" id="Line" stroke="#0782E3" stroke-width="2" stroke-linecap="square" mask="url(#mask-3)"></path>
+                            <path d="M25.8579545,22.9285714 L36.3777239,12.2057177" id="Line" stroke="#0782E3" stroke-width="2" stroke-linecap="square" mask="url(#mask-3)" transform="translate(31.113636, 17.571429) scale(-1, 1) translate(-31.113636, -17.571429) "></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
